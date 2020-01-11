@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block search %}
+
+<div class="section">
+    <div class="container category-main">
+        <div class="row">
+            <div class="col-lg-6 offset-3 category-projects">
+                <div class="text-center category-pr">
+                    {% if search_list %}
+                    {% for projects in search_list %}
+                        <a href="{% url 'tasks:detail' projects.pk %}">{{projects.title}}</a>
+                    {% endfor %}
+                    {% else %}
+                        <p>Ничего не найдено</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+{% endblock %}

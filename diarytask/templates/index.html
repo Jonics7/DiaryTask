@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="section header-section">
+    <div class="container container_1">
+        <div class="row">
+            <div class="col-lg-4">
+                <a class="btn btn-primary home-button" href="{% url 'tasks:index' %}" role="button">Home</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-primary create-button" href="{% url 'tasks:create_new_project' %}" role="button">Create new project</a>
+            </div>
+            <div class="col-lg-4">
+                <div class="form">
+                    <form action="{% url 'tasks:search' %}" class="search-form">
+                        <input type="text" class="form-control search-poly" placeholder="Search" name="search">
+                        <button class="btn-primary search-button" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row main_1">
+            <div class="col-lg-3">
+                <div class="sidebar">
+                    <a class="btn btn-outline-primary link-projects" href="{% url 'tasks:web' %}">Web projects</a>
+                    <a class="btn btn-outline-primary link-projects" href="{% url 'tasks:games' %}">Game projects</a>
+                    <a class="btn btn-outline-primary link-projects" href="{% url 'tasks:scripts' %}">Scripts</a>
+                    <a class="btn btn-outline-primary link-projects-1" href="{% url 'tasks:another' %}">Another</a>
+                </div>
+            </div>
+            <div class="col-lg-6 projects-main">
+                <div class="all-projects text-center">
+                    {% if latest_projects_list %}
+    
+                    {% for p in latest_projects_list %}
+                        <a class="all-projects__go-to-project" href="{% url 'tasks:detail' p.pk %}">{{ p.title }}</a>
+                    {% endfor %}
+            
+                    {% else %}
+                    <p class="none-projects">No projects are available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+</body>
+</html>

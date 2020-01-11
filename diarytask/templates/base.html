@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/glyphicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+
+<div class="section header-section">
+    <div class="container container_1">
+        <div class="row">
+            <div class="col-lg-4">
+                <a class="btn btn-primary home-button" href="{% url 'tasks:index' %}" role="button">Home</a>
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-primary create-button" href="{% url 'tasks:create_new_project' %}" role="button">Create new project</a>
+            </div>
+            <div class="col-lg-4">
+                <div class="form">
+                    <form action="{% url 'tasks:search' %}" class="search-form">
+                        <input type="text" class="form-control search-poly" placeholder="Search" name="search">
+                        <button class="btn-primary search-button" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+
+{% block search %}{% endblock %}
+{% block web %}{% endblock %}
+{% block games %}{% endblock %}
+{% block scripts %}{% endblock %}
+{% block another %}{% endblock %}
+{% block task %}{% endblock %}
+{% block form_create %}{% endblock %}
+{% block project_create %}{% endblock %}
+
+
+</body>
+</html>

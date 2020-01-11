@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Another
+{% endblock %}
+
+{% block another %}
+
+<div class="section">
+    <div class="container category-main">
+        <div class="row">
+            <div class="col-lg-6 offset-3 category-projects">
+                <div class="text-center category-pr">
+                    {% for pw in another_projects %}
+                        <a href="{% url 'tasks:detail' pw.pk %}">{{pw.title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

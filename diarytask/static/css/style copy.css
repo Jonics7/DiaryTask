@@ -1,0 +1,124 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5px;
+  margin-left: 5px;
+  max-height: 50px;
+  margin-bottom: 5px;
+}
+
+.header__back-to-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  height: 48px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #4682B4;
+  border-radius: 24px;
+  font-size: 25px;
+  color: #000000;
+}
+
+.header__new-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 170px;
+  border: 1px solid #4682b4;
+  border-radius: 24px;
+  background-color: #4682b4;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__search-place {
+  width: 200px;
+  height: 48px;
+  border: 1px solid #4682b4;
+  border-radius: 24px;
+  padding: 10px 20px;
+}
+
+.header__search-button {
+  margin-right: 30px;
+  border: none;
+  margin-left: 20px;
+  border-radius: 24px;
+  background-color: #4682b4;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.border {
+  display: block;
+  border: 0.5px solid;
+  opacity: 0.15;
+}
+
+.container-main {
+  width: 100%;
+  display: table;
+}
+
+.left-side-bar {
+  display: table-cell;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.left-side-bar__web, .left-side-bar__game, .left-side-bar__scripts, .left-side-bar__another {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  border: 1.5px solid #4682b4;
+  border-radius: 24px;
+  width: 120px;
+  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 16px;
+}
+
+.all-projects {
+  display: table-cell;
+  text-align: center;
+}
+
+.all-projects__go-to-project {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style copy.css.map */

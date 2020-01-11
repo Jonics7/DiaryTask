@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ projects.title }}
+{% endblock %}
+
+{% block project_create %}
+
+    <div class="section main-section">
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        {{projects.task}}
+                        <!-- 
+                            <form action="" method="POST" class="add-task" >
+                            {% csrf_token %}
+                            
+                            <input type="text" class="form-control">
+                            <input type="submit" class="btn btn-primary create-button" value="Сохранить">
+                        </form>
+                         -->
+                    </div>
+                    <div class="col-lg-4 main-info">
+                        <div class="project-info">
+                            <h5 class="project-title">{{projects.title}}</h5>
+                            <p>Категория: {{projects.category}}</p>
+                            <p>Используемый язык: {{projects.language}}</p>
+                            <p>Дата создания: {{projects.pub_date}}</p>
+                            {% if projects.upload %}
+                            Файл проекта: <a href="{{projects.upload.url}}">{{projects.upload}}</a>
+                            {% endif %}
+                        </div>
+                        
+                        <form enctype="multipart/form-data" action="{% url 'tasks:detail' project.pk %}" method="POST">
+                            {% csrf_token %}
+                            
+                            <!-- <div class="form-group upload">
+                              <label>Загрузить проект</label>
+                              <input type="file" class="form-control-file" >
+                            </div> -->
+                            
+                            <div class="fileform">
+                                {{form.as_p}}
+                            </div>
+                            <button class="btn btn-primary" type="submit">Сохранить</button>
+                            
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>    
+
+{% endblock %}
